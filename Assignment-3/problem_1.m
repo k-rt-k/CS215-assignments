@@ -5,7 +5,7 @@ N = [ 5, 10, 20, 40, 60, 80, 100, 500, 10^3, 10^4];
 
 % true parameters for data generation
 true_mean = 10;
-std =10;
+std =4;
 
 % gaussian parameters for prior for map1
 meanprior = 10.5;
