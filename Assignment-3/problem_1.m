@@ -34,4 +34,4 @@ mmap2 = abs(mmap2-true_mean)/true_mean;
 % plotting them - plot them properly pls
 
 m_data = {mu_ml mmap1 mmap2};
-boxplotGroup(m_data, 'primaryLabels', ["MLE" "GP" "UP"])
+boxplotGroup(m_data, 'primaryLabels', ["MLE" "GP" "UP"],'Colors','bgr','SecondaryLabels',N)
