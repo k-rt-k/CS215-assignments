@@ -31,7 +31,17 @@ mmap2(mmap2>uub)=uub;
 mu_ml = abs(mu_ml-true_mean)/true_mean;
 mmap1 = abs(mmap1-true_mean)/true_mean;
 mmap2 = abs(mmap2-true_mean)/true_mean;
-% plotting them - plot them properly pls
+% plotting them
 
 m_data = {mu_ml mmap1 mmap2};
-boxplotGroup(m_data, 'primaryLabels', ["MLE" "GP" "UP"],'Colors','bgr','SecondaryLabels',N)
+boxplotGroup(m_data,'Colors','brk','SecondaryLabels',{'5', '10', '20', '40', '60', '80', '100', '500', '1000', '10000'})
+xlabel('Sample Size');
+ylabel('Relative Errors in Estimates')
+hold on;
+plot(NaN,'Color','b')
+plot(NaN,'Color','r')
+plot(NaN,'Color','k')
+ylim([-0.01,0.5]);
+legend({'Maximum Likelihood Estimate','A Posteriori Estimate for Gaussian prior','A Posteriori Estimate for Uniform prior'})
+
+hold off;

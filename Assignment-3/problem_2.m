@@ -30,4 +30,12 @@ lml = abs(lml-lambda_true)/lambda_true;
 lposm = abs(lposm-lambda_true)/lambda_true;
 %plot them like the previous some way
 l_data = {lml lposm};
-boxplotGroup(l_data, 'primaryLabels', ["MLE" "PM"])
+boxplotGroup(l_data,'Colors','br','SecondaryLabels',{'5', '10', '20', '40', '60', '80', '100', '500', '1000', '10000'});
+
+hold on;
+plot(NaN,'Color','b');
+plot(NaN,'Color','r');
+legend({'MLE','Posterior Mean'});
+xlabel('Sample Size');
+ylabel('Relative Errors in Estimates');
+hold off;
