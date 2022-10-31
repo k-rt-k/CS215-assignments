@@ -23,11 +23,11 @@ end
 %ml
 lml = 1./smean;
 % posterior mean
-lposm = (N+alpha)./(N.*smean+1/beta);
+lposm = (N+alpha)./(N.*smean+beta);
 
 % converting estimates to relative errors
 lml = abs(lml-lambda_true)/lambda_true;
 lposm = abs(lposm-lambda_true)/lambda_true;
 %plot them like the previous some way
-boxplot(lml);
-boxplot(lposm);
+l_data = {lml lposm};
+boxplotGroup(l_data, 'primaryLabels', ["MLE" "PM"])
